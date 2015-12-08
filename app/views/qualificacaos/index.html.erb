@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Qualificacaos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Comentario</th>
+      <th>Nota</th>
+      <th>Usuario</th>
+      <th>Academia</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @qualificacaos.each do |qualificacao| %>
+      <tr>
+        <td><%= qualificacao.comentario %></td>
+        <td><%= qualificacao.nota %></td>
+        <td><%= qualificacao.usuario_id %></td>
+        <td><%= qualificacao.academia_id %></td>
+        <td><%= link_to 'Show', qualificacao %></td>
+        <td><%= link_to 'Edit', edit_qualificacao_path(qualificacao) %></td>
+        <td><%= link_to 'Destroy', qualificacao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Qualificacao', new_qualificacao_path %>

@@ -1,0 +1,35 @@
+<%= form_for(@qualificacao) do |f| %>
+  <% if @qualificacao.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@qualificacao.errors.count, "error") %> prohibited this qualificacao from being saved:</h2>
+
+      <ul>
+      <% @qualificacao.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :comentario %><br>
+    <%= f.text_field :comentario %>
+  </div>
+  <div class="field">
+    <%= f.label :nota %><br>
+    <%= f.number_field :nota %>
+  </div>
+  <div class="field">
+    <%= f.label :usuario_id %><br>
+    <%= f.collection_select(:usuario_id, Usuario.order(:nome),
+                                    :id, :nome, :prompt => true) %>
+  </div>
+  <div class="field">
+    <%= f.label :academia_id %><br>
+    <%= f.collection_select(:academia_id, AcademiaTreinamento.order(:nome),
+                                    :id, :nome, :prompt => true) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
