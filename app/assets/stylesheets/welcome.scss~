@@ -1,0 +1,14 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+background-color:
+
+    código hexadecimal: #ffc6d9
+    código rgb: rgb(255,235,0)
+    código rgba: rgb(255,235,0, 0.7)
+    código hsl: hsl(210,100%,40%)
+    código hsla: hsla(155,80%,35%,0.4)
+    palavra-chave: red, blue, green...etc
+    transparente: transparent
+
+
