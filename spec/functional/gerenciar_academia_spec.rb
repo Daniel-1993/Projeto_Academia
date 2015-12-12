@@ -1,40 +1,65 @@
-require 'rails_helper'
+require 'spec_helper'
 
-feature 'gerenciar Academia' do
+feature 'gerenciar academia_treinamento' do
 
-  scenario 'incluir Academia' do 
+  before(:each) do
+    @modalidade = create(:modalidade, descricao: "Luta")
 
+  end
+
+
+  let(:dados) do {
+
+    nome: "Corpus",
+    endereco: "Mundo da lua",
+    modalidade: "Luta",
+   }
+  end
+
+  scenario 'incluir academia_treinamento' do
     visit new_academia_treinamento_path
-    preencher_e_verificar_academia_treinamento
+    preencher_academia_treinamento(dados)
+    click_button 'Salvar'
+    verificar_academia_treinamento(dados)
+
   end
 
-  scenario 'alterar Academia' do 
+  scenario 'alterar academia_treinamento' do
 
-    academia_treinamento = FactoryGirl.create(:academia_treinamento)
+    academia_treinamento = FactoryGirl.create(:academia_treinamento, modalidade: @academia_treinamento )
+
     visit edit_academia_treinamento_path(academia_treinamento)
-    preencher_e_verificar_academia_treinamento
+    preencher_academia_treinamento(dados)
+    click_button 'Salvar'
+    verificar_academia_treinamento(dados)
+
 
   end
 
-   scenario 'excluir Academia' do 
+  scenario 'excluir academia_treinamento' do
 
-    academia_treinamento = FactoryGirl.create(:academia_treinamento)
+    academia_treinamento = FactoryGirl.create(:academia_treinamento, modalidade: @academia_treinamento)
     visit academia_treinamentos_path
+    #save_and_open_page
     click_link 'Excluir'
 
   end
 
-   def preencher_e_verificar_academia_treinamento
+  def preencher_academia_treinamento(dados)
 
-      fill_in 'Nome',     :with => "Corpus"
-      fill_in 'Local',  :with => "Campos"
+    fill_in 'Nome',  with: dados[:nome]
+    fill_in 'Endereco',  with: dados[:endereco]
+    select dados[:descricao], from: "Modalidade"
+
+  end
+
+  def verificar_academia_treinamento(dados)
+
+    page.should have_content "Nome: #{dados[:nome]}"
+    page.should have_content "Endereco: #{dados[:endereco]}"
+    page.should have_content "Modalidade: #{dados[:descricao]}"
 
 
-      click_button 'Salvar'
+  end
 
-      expect(page).to have_content 'Nome: Corpus'
-      expect(page).to have_content 'Local: Campos'
-
-
-   end
 end
