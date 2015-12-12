@@ -1,9 +1,9 @@
 FactoryGirl.define do
   factory :usuario do
     nome "MyString"
-email "MyString"
-telefone "MyString"
-senha "MyString"
+	telefone "MyString"
+	email "MyString"
+	senha "MyString"
   end
 
 end

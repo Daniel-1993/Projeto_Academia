@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151212022235) do
+ActiveRecord::Schema.define(version: 20151212023633) do
 
   create_table "academia_treinamentos", force: :cascade do |t|
     t.string   "nome"
@@ -42,12 +42,12 @@ ActiveRecord::Schema.define(version: 20151212022235) do
   create_table "qualificacaos", force: :cascade do |t|
     t.string   "comentario"
     t.integer  "nota"
-    t.integer  "academia_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "academia_treinamento_id"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
-  add_index "qualificacaos", ["academia_id"], name: "index_qualificacaos_on_academia_id"
+  add_index "qualificacaos", ["academia_treinamento_id"], name: "index_qualificacaos_on_academia_treinamento_id"
 
   create_table "usuarios", force: :cascade do |t|
     t.string   "nome"

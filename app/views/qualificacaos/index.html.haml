@@ -5,7 +5,7 @@
     %tr
       %th Comentario
       %th Nota
-      %th Academia
+      %th Academia treinamento
       %th
       %th
       %th
@@ -15,7 +15,7 @@
       %tr
         %td= qualificacao.comentario
         %td= qualificacao.nota
-        %td= qualificacao.academia
+        %td= qualificacao.academia_treinamento
         %td= link_to 'Show', qualificacao
         %td= link_to 'Edit', edit_qualificacao_path(qualificacao)
         %td= link_to 'Destroy', qualificacao, :method => :delete, :data => { :confirm => 'Are you sure?' }
