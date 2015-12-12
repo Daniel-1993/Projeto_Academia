@@ -3,7 +3,7 @@ require 'spec_helper'
 feature 'gerenciar qualificacao' do
 
   before(:each) do
-    @qualificacao = create(:academia_treinamento, nome: "Corpus")
+    @academia_treinamento = create(:academia_treinamento, nome: "Corpus")
 
   end
 
@@ -11,8 +11,8 @@ feature 'gerenciar qualificacao' do
   let(:dados) do {
 
     comentario: "boa",
-    nota: 1,
-    nome: "Corpus",
+    nota: "1",
+    academia_treinamento: "Corpus",
    }
   end
 
@@ -24,7 +24,7 @@ feature 'gerenciar qualificacao' do
 
   end
 
-  scenario 'alterar ' do
+  scenario 'alterar qualificacao' do
 
     qualificacao = FactoryGirl.create(:qualificacao, academia_treinamento: @qualificacao )
 
@@ -49,7 +49,7 @@ feature 'gerenciar qualificacao' do
 
     fill_in 'Comentario',  with: dados[:comentario]
     fill_in 'Nota',  with: dados[:nota]
-    select dados[:nome], from: "Academia_treinamento"
+    select dados[:nome], from: "Academia treinamento"
 
   end
 
@@ -57,7 +57,7 @@ feature 'gerenciar qualificacao' do
 
     page.should have_content "Comentario: #{dados[:comentario]}"
     page.should have_content "Nota: #{dados[:nota]}"
-    page.should have_content "Academia_treinamento: #{dados[:nome]}"
+    page.should have_content "Academia treinamento: #{dados[:nome]}"
 
   end
 
