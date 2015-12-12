@@ -1,0 +1,23 @@
+%h1 Listing modalidades
+
+%table
+  %thead
+    %tr
+      %th Descricao
+      %th Professor
+      %th
+      %th
+      %th
+
+  %tbody
+    - @modalidades.each do |modalidade|
+      %tr
+        %td= modalidade.descricao
+        %td= modalidade.professor
+        %td= link_to 'Show', modalidade
+        %td= link_to 'Edit', edit_modalidade_path(modalidade)
+        %td= link_to 'Destroy', modalidade, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Modalidade', new_modalidade_path

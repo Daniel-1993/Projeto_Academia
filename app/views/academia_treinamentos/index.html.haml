@@ -1,0 +1,25 @@
+%h1 Listing academia_treinamentos
+
+%table
+  %thead
+    %tr
+      %th Nome
+      %th Endereco
+      %th Modalidade
+      %th
+      %th
+      %th
+
+  %tbody
+    - @academia_treinamentos.each do |academia_treinamento|
+      %tr
+        %td= academia_treinamento.nome
+        %td= academia_treinamento.endereco
+        %td= academia_treinamento.modalidade
+        %td= link_to 'Show', academia_treinamento
+        %td= link_to 'Edit', edit_academia_treinamento_path(academia_treinamento)
+        %td= link_to 'Destroy', academia_treinamento, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Academia treinamento', new_academia_treinamento_path

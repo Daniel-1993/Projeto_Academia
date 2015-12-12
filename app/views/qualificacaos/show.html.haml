@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Comentario:
+  = @qualificacao.comentario
+%p
+  %b Nota:
+  = @qualificacao.nota
+%p
+  %b Academia:
+  = @qualificacao.academia
+
+= link_to 'Edit', edit_qualificacao_path(@qualificacao)
+\|
+= link_to 'Back', qualificacaos_path

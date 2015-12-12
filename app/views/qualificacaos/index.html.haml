@@ -1,0 +1,25 @@
+%h1 Listing qualificacaos
+
+%table
+  %thead
+    %tr
+      %th Comentario
+      %th Nota
+      %th Academia
+      %th
+      %th
+      %th
+
+  %tbody
+    - @qualificacaos.each do |qualificacao|
+      %tr
+        %td= qualificacao.comentario
+        %td= qualificacao.nota
+        %td= qualificacao.academia
+        %td= link_to 'Show', qualificacao
+        %td= link_to 'Edit', edit_qualificacao_path(qualificacao)
+        %td= link_to 'Destroy', qualificacao, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Qualificacao', new_qualificacao_path

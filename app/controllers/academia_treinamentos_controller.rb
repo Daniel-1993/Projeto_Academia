@@ -69,6 +69,6 @@ class AcademiaTreinamentosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def academia_treinamento_params
-      params.require(:academia_treinamento).permit(:nome, :local)
+      params.require(:academia_treinamento).permit(:nome, :endereco, :modalidade_id)
     end
 end

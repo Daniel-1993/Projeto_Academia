@@ -1,0 +1,10 @@
+= simple_form_for(@qualificacao) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :comentario
+    = f.input :nota
+    = f.association :academia
+
+  .form-actions
+    = f.button :submit

@@ -4,15 +4,18 @@
   <title>ProjetoAcademia</title>
       <nav id="menu">
     	<ul>
-    		<li><a href="#">Home</a></li>
-    		<li><a href="#">Produtos</a></li>
-    		<li><a href="#">Missão</a></li>
-    		<li><a href="#">Links</a></li>
-    		<li><a href="#">Contato</a></li>
+    		<li><a href="http://localhost:3000">Home</a></li>
+    		<li><a href="usuarios">Usuarios</a></li>
+    		<li><a href="professors">Professores</a></li>
+    		<li><a href="qualificacaos">Comentarios e Notas</a></li>
+    		<li><a href="modalidades">Modalidades</a></li>
     	</ul>
     </nav>
 </head>
 <body>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
 
 <%= yield %>
 

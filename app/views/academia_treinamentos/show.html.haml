@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Nome:
+  = @academia_treinamento.nome
+%p
+  %b Endereco:
+  = @academia_treinamento.endereco
+%p
+  %b Modalidade:
+  = @academia_treinamento.modalidade
+
+= link_to 'Edit', edit_academia_treinamento_path(@academia_treinamento)
+\|
+= link_to 'Back', academia_treinamentos_path

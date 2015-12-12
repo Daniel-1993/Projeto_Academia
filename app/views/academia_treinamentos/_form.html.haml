@@ -1,0 +1,10 @@
+= simple_form_for(@academia_treinamento) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :nome
+    = f.input :endereco
+    = f.association :modalidade
+
+  .form-actions
+    = f.button :submit

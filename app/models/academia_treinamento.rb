@@ -1,3 +1,3 @@
 class AcademiaTreinamento < ActiveRecord::Base
-	has_many :qualificacaos
+  belongs_to :modalidade
 end

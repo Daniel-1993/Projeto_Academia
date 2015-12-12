@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
-
   resources :qualificacaos
   resources :academia_treinamentos
+  resources :modalidades
   resources :professors
   resources :usuarios
+  get 'welcome/index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

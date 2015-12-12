@@ -1,1 +1,1 @@
-json.extract! @academia_treinamento, :id, :nome, :local, :created_at, :updated_at
+json.extract! @academia_treinamento, :id, :nome, :endereco, :modalidade_id, :created_at, :updated_at

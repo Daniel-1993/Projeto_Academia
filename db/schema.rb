@@ -11,14 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151208174642) do
+ActiveRecord::Schema.define(version: 20151212022235) do
 
   create_table "academia_treinamentos", force: :cascade do |t|
     t.string   "nome"
-    t.string   "local"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "endereco"
+    t.integer  "modalidade_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
+
+  add_index "academia_treinamentos", ["modalidade_id"], name: "index_academia_treinamentos_on_modalidade_id"
+
+  create_table "modalidades", force: :cascade do |t|
+    t.string   "descricao"
+    t.integer  "professor_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "modalidades", ["professor_id"], name: "index_modalidades_on_professor_id"
 
   create_table "professors", force: :cascade do |t|
     t.string   "nome"
@@ -30,16 +42,17 @@ ActiveRecord::Schema.define(version: 20151208174642) do
   create_table "qualificacaos", force: :cascade do |t|
     t.string   "comentario"
     t.integer  "nota"
+    t.integer  "academia_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "usuario_id"
-    t.integer  "academia_id"
   end
+
+  add_index "qualificacaos", ["academia_id"], name: "index_qualificacaos_on_academia_id"
 
   create_table "usuarios", force: :cascade do |t|
     t.string   "nome"
-    t.string   "telefone"
     t.string   "email"
+    t.string   "telefone"
     t.string   "senha"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
