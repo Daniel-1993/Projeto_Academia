@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :modalidade do
     descricao "MyString"
-professor nil
+	professor nil
   end
 
 end
