@@ -3,7 +3,7 @@ require 'spec_helper'
 feature 'gerenciar qualificacao' do
 
   before(:each) do
-    @qualificacao = create(:usuario, nome: "Victor")
+    @qualificacao = create(:academia_treinamento, nome: "Corpus")
 
   end
 
@@ -11,8 +11,8 @@ feature 'gerenciar qualificacao' do
   let(:dados) do {
 
     comentario: "boa",
-    nota: 10,
-    usuario: "Victor",
+    nota: 1,
+    nome: "Corpus",
    }
   end
 
@@ -26,7 +26,7 @@ feature 'gerenciar qualificacao' do
 
   scenario 'alterar ' do
 
-    qualificacao = FactoryGirl.create(:qualificacao, usuario: @qualificacao )
+    qualificacao = FactoryGirl.create(:qualificacao, academia_treinamento: @qualificacao )
 
     visit edit_qualificacao_path(qualificacao)
     preencher_qualificacao(dados)
@@ -38,7 +38,7 @@ feature 'gerenciar qualificacao' do
 
   scenario 'excluir qualificacao' do
 
-    qualificacao = FactoryGirl.create(:qualificacao, usuario: @qualificacao)
+    qualificacao = FactoryGirl.create(:qualificacao, academia_treinamento: @qualificacao)
     visit qualificacaos_path
     #save_and_open_page
     click_link 'Excluir'
@@ -49,7 +49,7 @@ feature 'gerenciar qualificacao' do
 
     fill_in 'Comentario',  with: dados[:comentario]
     fill_in 'Nota',  with: dados[:nota]
-    select dados[:usuario], from: "Usuario"
+    select dados[:nome], from: "Academia_treinamento"
 
   end
 
@@ -57,7 +57,7 @@ feature 'gerenciar qualificacao' do
 
     page.should have_content "Comentario: #{dados[:comentario]}"
     page.should have_content "Nota: #{dados[:nota]}"
-    page.should have_content "Usuario: #{dados[:nome]}"
+    page.should have_content "Academia_treinamento: #{dados[:nome]}"
 
   end
 

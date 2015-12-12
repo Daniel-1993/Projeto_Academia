@@ -4,7 +4,7 @@
   .form-inputs
     = f.input :comentario
     = f.input :nota
-    = f.association :academia_treinamento
+    = f.association :academia_treinamento, label_method: :nome
 
   .form-actions
-    = f.button :submit
+    = f.button :submit , "Salvar"
