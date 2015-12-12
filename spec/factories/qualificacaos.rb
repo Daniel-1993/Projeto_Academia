@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :qualificacao do
     comentario "MyString"
-	nota 1
+	nota "MyString"
 	academia_treinamento nil
   end
 
