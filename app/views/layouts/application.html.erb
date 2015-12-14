@@ -4,11 +4,12 @@
   <title>ProjetoAcademia</title>
       <nav id="menu">
     	<ul>
-    		<li><a href="http://localhost:3000">Home</a></li>
-    		<li><a href="usuarios">Usuarios</a></li>
-    		<li><a href="professors">Professores</a></li>
-    		<li><a href="qualificacaos">Comentarios e Notas</a></li>
-    		<li><a href="modalidades">Modalidades</a></li>
+    		<li><a class="principal" href="http://localhost:3000">Home</a></li>
+    		<li><%=li= link_to "Usuarios", "/usuarios"%> </li>
+    		<li><%=li= link_to "Professores", "/professors"%> </li>
+        <li><%=li= link_to "Comentarios e Notas", "/qualificacaos"%> </li>
+        <li><%=li= link_to "Academias", "/academia_treinamentos"%> </li>
+        <li><%=li= link_to "Modalidades", "/modalidades"%> </li>
     	</ul>
     </nav>
 </head>

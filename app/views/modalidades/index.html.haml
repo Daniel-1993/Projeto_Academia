@@ -1,4 +1,4 @@
-%h1 Listing modalidades
+%h1 Modalidades Cadastradaas
 
 %table
   %thead
@@ -14,10 +14,10 @@
       %tr
         %td= modalidade.descricao
         %td= modalidade.professor
-        %td= link_to 'Show', modalidade
-        %td= link_to 'Edit', edit_modalidade_path(modalidade)
+        %td= link_to 'Exibir', modalidade
+        %td= link_to 'Editar', edit_modalidade_path(modalidade)
         %td= link_to 'Excluir', modalidade, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
-= link_to 'New Modalidade', new_modalidade_path
+= link_to 'Cadastrar Modalidade', new_modalidade_path

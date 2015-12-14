@@ -1,4 +1,4 @@
-%h1 Listing professors
+%h1 Professores Cadastrados
 
 %table
   %thead
@@ -14,10 +14,10 @@
       %tr
         %td= professor.nome
         %td= professor.telefone
-        %td= link_to 'Show', professor
-        %td= link_to 'Edit', edit_professor_path(professor)
+        %td= link_to 'Exibir', professor
+        %td= link_to 'Editar', edit_professor_path(professor)
         %td= link_to 'Excluir', professor, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
-= link_to 'New Professor', new_professor_path
+= link_to 'Cadastrar Professor', new_professor_path

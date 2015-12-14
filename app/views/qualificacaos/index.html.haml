@@ -1,4 +1,4 @@
-%h1 Listing qualificacaos
+%h1 Comentários e Notas
 
 %table
   %thead
@@ -16,10 +16,10 @@
         %td= qualificacao.comentario
         %td= qualificacao.nota
         %td= qualificacao.academia_treinamento
-        %td= link_to 'Show', qualificacao
-        %td= link_to 'Edit', edit_qualificacao_path(qualificacao)
+        %td= link_to 'Exibir', qualificacao
+        %td= link_to 'Editar', edit_qualificacao_path(qualificacao)
         %td= link_to 'Excluir', qualificacao, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
-= link_to 'New Qualificacao', new_qualificacao_path
+= link_to 'Cadastrar Comentario e Nota', new_qualificacao_path

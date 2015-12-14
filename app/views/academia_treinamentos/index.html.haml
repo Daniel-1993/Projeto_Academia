@@ -1,4 +1,4 @@
-%h1 Listing academia_treinamentos
+%h1 Academias Cadastradas
 
 %table
   %thead
@@ -16,10 +16,10 @@
         %td= academia_treinamento.nome
         %td= academia_treinamento.endereco
         %td= academia_treinamento.modalidade
-        %td= link_to 'Show', academia_treinamento
-        %td= link_to 'Edit', edit_academia_treinamento_path(academia_treinamento)
+        %td= link_to 'Exibir', academia_treinamento
+        %td= link_to 'Editar', edit_academia_treinamento_path(academia_treinamento)
         %td= link_to 'Excluir', academia_treinamento, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
-= link_to 'New Academia treinamento', new_academia_treinamento_path
+= link_to 'Cadastrar Academia', new_academia_treinamento_path
